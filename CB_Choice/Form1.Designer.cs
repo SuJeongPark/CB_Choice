@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cdList = new System.Windows.Forms.ComboBox();
+            this.cbList = new System.Windows.Forms.ComboBox();
             this.txtList = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cdList
+            // cbList
             // 
-            this.cdList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cdList.FormattingEnabled = true;
-            this.cdList.Location = new System.Drawing.Point(13, 13);
-            this.cdList.Name = "cdList";
-            this.cdList.Size = new System.Drawing.Size(215, 20);
-            this.cdList.TabIndex = 0;
+            this.cbList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbList.FormattingEnabled = true;
+            this.cbList.Location = new System.Drawing.Point(13, 13);
+            this.cbList.Name = "cbList";
+            this.cbList.Size = new System.Drawing.Size(215, 20);
+            this.cbList.TabIndex = 0;
+            this.cbList.SelectedIndexChanged += new System.EventHandler(this.cbList_SelectedIndexChanged);
             // 
             // txtList
             // 
@@ -58,6 +59,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "추가";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblResult
             // 
@@ -72,15 +74,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 295);
+            this.ClientSize = new System.Drawing.Size(247, 238);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtList);
-            this.Controls.Add(this.cdList);
+            this.Controls.Add(this.cbList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "메뉴 선택 추가";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,7 +91,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cdList;
+        private System.Windows.Forms.ComboBox cbList;
         private System.Windows.Forms.TextBox txtList;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblResult;
